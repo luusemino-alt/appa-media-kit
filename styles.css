@@ -423,3 +423,64 @@ input[type=color]::-webkit-color-swatch{border:2px solid rgba(255,255,255,.3);bo
   .nav .btn-sm{padding:9px 14px;font-size:12px}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+
+/* ===== v4: ecosistema, pop-up, GIFT ===== */
+.sec-eco{background:linear-gradient(180deg,#0c3a30 0%,#1C1B1B 100%)}
+.popsec{display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:center}
+.popsec-copy>p{font-size:18px;color:#cfdcd8;font-weight:300;margin-bottom:24px}
+.popsec-kpis{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:22px}
+.popsec-kpis div{background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:16px;padding:14px 18px}
+.popsec-kpis b{display:block;font-size:24px;color:var(--green);font-weight:800;line-height:1.1}
+.popsec-kpis span{font-size:13px;color:#cfdcd8}
+.popsec .note-pop{margin-top:0;border:1px solid rgba(241,91,59,.5);background:rgba(241,91,59,.08)}
+.popsec .note-pop b{color:#ff8a70}
+.popsec .note-pop p{margin-bottom:0}
+.pop-diagram-lg{width:min(300px,100%);border-radius:22px;border:3px solid #333;box-shadow:var(--shadow)}
+.pop-diagram-lg .pd-art{font-size:22px}.pop-diagram-lg .pd-art small{font-size:13px}
+.pop-diagram-lg .pd-btn{font-size:13px;padding:6px 20px}.pop-diagram-lg .pd-safe small{font-size:12px}
+
+.sec-gift{background:radial-gradient(900px 500px at 85% 0%,rgba(241,91,59,.28),transparent 60%),linear-gradient(160deg,#1C1B1B 0%,#2a1f1c 55%,#1C1B1B 100%)}
+.eyebrow-gift{color:var(--gift)}
+.sec-gift .sec-head h2 .light{color:#ffb4a3}
+.gift2{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:center}
+.gcard{perspective:900px}
+.gcard-in{position:relative;aspect-ratio:1.6;border-radius:26px;padding:30px;background:linear-gradient(135deg,#F15B3B 0%,#ff8a5c 55%,#F15B3B 100%);box-shadow:0 40px 70px -25px rgba(241,91,59,.6);display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;transform:rotateY(-12deg) rotateX(6deg);animation:gfloat 6s ease-in-out infinite}
+.gcard-in::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.35) 45%,transparent 60%);transform:translateX(-100%);animation:shine 4s ease-in-out infinite}
+.gcard-in img{height:48px;width:auto;position:absolute;left:30px;top:30px}
+.gcard-in span{position:absolute;left:30px;top:84px;font-size:40px;font-weight:800;letter-spacing:.04em}
+.gcard-in i{position:absolute;right:30px;top:30px;width:52px;height:40px;border-radius:8px;background:linear-gradient(135deg,#ffe2b0,#d9a75a)}
+.gcard-in small{position:absolute;left:30px;bottom:26px;font-size:14px;opacity:.9}
+@keyframes gfloat{50%{transform:rotateY(-6deg) rotateX(2deg) translateY(-10px)}}
+@keyframes shine{60%,100%{transform:translateX(100%)}}
+.gbenef{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.gbenef li{background:rgba(255,255,255,.05);border:1px solid rgba(241,91,59,.35);border-radius:18px;padding:18px}
+.gbenef b{display:block;font-size:18px;color:#fff}
+.gbenef b::before{content:"";display:block;width:28px;height:4px;border-radius:4px;background:var(--gift);margin-bottom:10px}
+.gbenef span{font-size:14px;color:#d9cfcc}
+.loop{margin-top:80px;text-align:center}
+.loop h3,.cases h3{font-size:clamp(26px,3vw,38px);font-weight:800}
+.loop>p{color:#d9cfcc;max-width:620px;margin:8px auto 28px}
+.loop-steps{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;position:relative}
+.loop-steps li{background:#262222;border:1px solid var(--line);border-radius:20px;padding:24px;display:flex;flex-direction:column;align-items:center;gap:6px;position:relative}
+.loop-steps li:not(:last-child)::after{content:"→";position:absolute;right:-16px;top:50%;transform:translate(50%,-50%);color:var(--gift);font-size:26px;font-weight:800;z-index:1}
+.loop-steps span{width:40px;height:40px;border-radius:50%;background:var(--gift);display:grid;place-items:center;font-weight:800}
+.loop-steps b{font-size:18px}
+.loop-steps small{color:#cfc5c2;font-size:14px}
+.cases{margin-top:90px;text-align:center}
+.cases-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:34px}
+.case{display:flex;flex-direction:column;align-items:center;gap:22px}
+.phone-case{--pw:290px}
+.phone-case .modal{width:84%}
+.phone-case .modal img{width:100%;display:block}
+.case figcaption{max-width:340px}
+.case figcaption b{display:block;font-size:18px;margin-bottom:4px}
+.case figcaption span{color:#d9cfcc;font-size:15px}
+.case figcaption strong{color:#ff8a70}
+@media (max-width:860px){
+  .popsec,.gift2,.cases-grid{grid-template-columns:1fr}
+  .popsec-visual{display:flex;justify-content:center}
+  .loop-steps{grid-template-columns:1fr}
+  .loop-steps li:not(:last-child)::after{content:"↓";right:50%;top:auto;bottom:-22px;transform:translateX(50%)}
+}
+@media (max-width:560px){.gbenef{grid-template-columns:1fr}.phone-case{--pw:270px}.gcard-in span{font-size:32px}}
+.pop-diagram-lg .pd-art{background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.35)),url("assets/creas/levis-popup.jpg") center top/cover;align-content:end;padding-bottom:18px;text-shadow:0 2px 8px rgba(0,0,0,.6)}
