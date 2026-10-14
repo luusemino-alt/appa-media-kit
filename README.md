@@ -2,7 +2,7 @@
 
 Web estática del Media Kit de ¡appa! ADS: audiencia, simulador de formatos con campañas reales, medidas de piezas y ecosistema.
 
-**Link público:** https://luusemino-alt.github.io/appa-media-kit/
+**Link público:** https://bit.ly/appa-mediakit (redirige a https://luusemino-alt.github.io/appa-media-kit/)
 
 - `index.html`, `styles.css`, `app.js`: la web (sin dependencias ni build). Funciona en compu y en celular.
 - `assets/`: logos, íconos, capturas de la app y piezas reales de marcas.
