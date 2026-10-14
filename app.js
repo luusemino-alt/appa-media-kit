@@ -225,12 +225,15 @@
     return `<span class="spec-shape"><i style="width:${Math.max(6, w * s)}px;height:${Math.max(6, h * s)}px"></i></span>`;
   }
   function renderSpecs() {
-    const rows = FORMATS.filter(f => !f.text).map(f => {
-      const v = sizeTxt(f);
-      const note = f.key === 'popup' ? '<small>Dejar 240 px libres abajo para el botón de la app</small>' : f.key === 'home2' ? '<small>Ex Home Spot</small>' : f.key === 'parking' ? '<small>Touch Point de salida del parking</small>' : '';
-      return `<div class="spec">${f.key === 'mail' ? shapeBox(660, 1100) : shapeBox(f.w, f.h)}<div class="spec-n">${f.name.replace(' · Touch Point', '')}${note}</div><button class="spec-v" data-copy="${v}">${v}</button></div>`;
+    // Orden y nombres según la ficha oficial "Medidas de piezas"
+    const ORDER = [['home1', 'Banner Home Principal'], ['home2', 'Banner Home Secundario'], ['benef', 'Banner Sección Beneficios'],
+      ['desc', 'Banner Sección Descuentos'], ['mall', 'Banner Perfil Shopping Principal'], ['parking', 'Banner Parking'],
+      ['popup', 'Pop-up'], ['mail', 'Mailing']];
+    const NOTES = { home2: 'Ex Home Spot', parking: 'Touch Point · pantalla “¡Gracias por tu visita!”', popup: 'Dejar 240 px libres abajo para el botón de la app' };
+    const rows = ORDER.map(([k, label]) => {
+      const f = fmtBy(k), v = sizeTxt(f), note = NOTES[k] ? `<small>${NOTES[k]}</small>` : '';
+      return `<div class="spec">${k === 'mail' ? shapeBox(660, 1100) : shapeBox(f.w, f.h)}<div class="spec-n">${label}${note}</div><button class="spec-v" data-copy="${v}">${v}</button></div>`;
     });
-    rows.push(`<div class="spec">${shapeBox(40, 24)}<div class="spec-n">Notificación Push<small>Formato de texto: título + mensaje</small></div><span class="spec-v na">Solo texto</span></div>`);
     $('#specAds').innerHTML = rows.join('');
     $('#specSocial').innerHTML = SOCIAL.map(([n, w, h]) => `<div class="spec">${shapeBox(w, h)}<div class="spec-n">${n}</div><button class="spec-v" data-copy="${w} x ${h} px">${w} × ${h} px</button></div>`).join('');
     document.addEventListener('click', e => {
