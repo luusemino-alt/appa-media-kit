@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=202610151724">
+<link rel="stylesheet" href="styles.css?v=202610151730">
 </head>
 <body>
 
@@ -315,70 +315,71 @@
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">Encuestas + NPS</span>
-      <h2>Conocé a tus clientes <span class="g">en tiempo real</span></h2>
-      <p>Encuestas in-app que el usuario responde desde su celular, segmentadas por local y por perfil. Cada respuesta se transforma en datos accionables para tu marca y para tus próximas campañas.</p>
+      <h2>Conocé a tus clientes <span class="g">en el momento justo</span></h2>
+      <p>La encuesta aparece en la app justo cuando el usuario aplica un beneficio en tu local. Así medís la experiencia real de compra, por local y por perfil, y recibís un informe con resultados y resúmenes automáticos de lo que opinan tus clientes.</p>
     </div>
 
     <div class="enc">
       <div class="enc-phone">
         <div class="phone">
           <div class="scr scr-white"><div class="sv">
-            <div class="sv-top"><span>←</span><b>Encuesta</b><span class="sv-step">1/3</span></div>
+            <div class="sv-ok"><span>✓</span><b>¡Aplicaste el beneficio con éxito!</b><small>Contanos cómo fue tu experiencia</small></div>
             <div class="sv-bar"><i></i></div>
-            <div class="sv-brand"><span class="sv-logo">TU<br>MARCA</span><small>Alto Palermo · hace 10 min</small></div>
-            <p class="sv-q">¿Qué tan probable es que recomiendes nuestra tienda a un amigo?</p>
-            <div class="sv-nps" id="svNps" role="radiogroup" aria-label="Puntaje de 0 a 10"></div>
-            <div class="sv-scale"><span>Nada probable</span><span>Muy probable</span></div>
-            <p class="sv-q sv-q2">¿Cómo calificarías la atención?</p>
-            <div class="sv-stars" id="svStars">★★★★★</div>
-            <p class="sv-q sv-q2">¿Qué fue lo que más te gustó?</p>
-            <div class="sv-chips"><span class="on">Atención</span><span>Variedad</span><span>Precio</span><span>Local</span></div>
+            <p class="sv-q">¿Conocías Tu Marca?</p>
+            <div class="sv-opts" id="svOpts" role="radiogroup"><button type="button" class="on">Sí</button><button type="button">Poco</button><button type="button">No</button></div>
+            <p class="sv-q">¿Cómo valorarías su atención?</p>
+            <div class="sv-stars" id="svStars" role="radiogroup"><button type="button" class="on">★</button><button type="button" class="on">★</button><button type="button" class="on">★</button><button type="button" class="on">★</button><button type="button" class="on">★</button></div>
+            <p class="sv-q">¿Qué podríamos mejorar?</p>
+            <div class="sv-text">Me encantaría encontrar más talles…<i></i></div>
             <span class="sv-send">Enviar respuesta</span>
           </div><div class="home-ind"></div></div>
         </div>
-        <div class="enc-chip enc-chip-a"><b>Respuesta registrada</b><span>NPS · Promotor</span></div>
+        <div class="enc-chip enc-chip-a"><b>Respuesta registrada</b><span id="svChip">Conocía la marca · 5 ★</span></div>
       </div>
 
       <div class="dash">
-        <div class="dash-hd"><span class="dot"></span><b>Panel de resultados</b><small>Vista ilustrativa</small></div>
+        <div class="dash-hd"><span class="dot"></span><b>Informe de resultados</b><small>Vista ilustrativa</small></div>
+        <div class="dash-meta"><span>Período: últimos 6 meses</span><span>Respuestas por pregunta</span><span>Powered by ¡appa!</span></div>
         <div class="dash-grid">
-          <div class="dash-card dash-nps">
-            <small>Net Promoter Score</small>
-            <svg viewBox="0 0 120 70" class="gauge" aria-hidden="true"><path d="M10 62a50 50 0 0 1 100 0" class="g-bg"/><path d="M10 62a50 50 0 0 1 100 0" class="g-val"/></svg>
-            <b class="nps-v">NPS</b>
-            <div class="nps-leg"><span><i class="p"></i>Promotores</span><span><i class="n"></i>Neutrales</span><span><i class="d"></i>Detractores</span></div>
+          <div class="dash-card">
+            <small>¿Conocías la marca? · Escala</small>
+            <ul class="bars">
+              <li><span>Sí</span><i style="--v:78%"></i></li>
+              <li><span>Poco</span><i style="--v:52%"></i></li>
+              <li><span>No</span><i style="--v:14%"></i></li>
+            </ul>
+            <p class="dash-note">Opción más seleccionada: <b>Sí</b></p>
           </div>
           <div class="dash-card">
-            <small>Satisfacción por local</small>
-            <ul class="bars">
-              <li><span>Local A</span><i style="--v:86%"></i></li>
-              <li><span>Local B</span><i style="--v:72%"></i></li>
-              <li><span>Local C</span><i style="--v:64%"></i></li>
-              <li><span>Local D</span><i style="--v:78%"></i></li>
+            <small>¿Cómo valorarías la atención? · Calificación</small>
+            <div class="rate"><b>★</b><span>Promedio y distribución de 1 a 5 estrellas</span></div>
+            <ul class="bars bars-s">
+              <li><span>5 ★</span><i style="--v:90%"></i></li>
+              <li><span>4 ★</span><i style="--v:22%"></i></li>
+              <li><span>3 ★</span><i style="--v:6%"></i></li>
             </ul>
           </div>
-          <div class="dash-card dash-wide">
-            <small>Evolución mensual</small>
-            <svg viewBox="0 0 300 80" class="spark" aria-hidden="true" preserveAspectRatio="none"><path class="sp-area" d="M0 62 C40 58 60 50 90 52 S150 34 180 38 S240 20 300 16 L300 80 L0 80Z"/><path class="sp-line" d="M0 62 C40 58 60 50 90 52 S150 34 180 38 S240 20 300 16"/></svg>
-            <div class="months"><span>Ene</span><span>Feb</span><span>Mar</span><span>Abr</span><span>May</span><span>Jun</span></div>
+          <div class="dash-card dash-wide ai">
+            <small><span class="ai-tag">IA</span> Resumen de respuestas · Texto libre</small>
+            <p class="ai-txt">Los clientes destacan de forma recurrente la <mark>calidez y profesionalismo del equipo</mark>, con menciones a vendedores por nombre. Como oportunidades de mejora aparecen <mark>ampliar el stock y los talles</mark> y sumar más promociones.</p>
           </div>
         </div>
       </div>
     </div>
 
     <div class="enc-feats">
-      <div class="ef"><span class="ef-i">01</span><b>Encuestas in-app y NPS</b><p>Satisfacción y recomendación medidas directamente en la app, justo después de la experiencia de compra.</p></div>
-      <div class="ef"><span class="ef-i">02</span><b>Personalización por local</b><p>Preguntas y resultados por cada tienda, para comparar y detectar oportunidades.</p></div>
-      <div class="ef"><span class="ef-i">03</span><b>Segmentación demográfica</b><p>Elegí a quién preguntar según edad, género, shopping e intereses de compra.</p></div>
-      <div class="ef"><span class="ef-i">04</span><b>Comunicación in-app</b><p>Después de responder, el usuario puede recibir comunicaciones que lo invitan a volver al local.</p></div>
-      <div class="ef"><span class="ef-i">05</span><b>Reportes mensuales</b><p>Reportes interactivos y analíticos con la evolución de cada indicador.</p></div>
+      <div class="ef"><span class="ef-i">01</span><b>En el momento justo</b><p>La encuesta se activa cuando el usuario aplica un beneficio en tu local: opina sobre una compra que acaba de hacer.</p></div>
+      <div class="ef"><span class="ef-i">02</span><b>Distintos tipos de pregunta</b><p>Escala, opción múltiple, calificación con estrellas, NPS y texto libre.</p></div>
+      <div class="ef"><span class="ef-i">03</span><b>Resúmenes con IA</b><p>Las respuestas abiertas se analizan y resumen automáticamente: qué se valora y qué mejorar.</p></div>
+      <div class="ef"><span class="ef-i">04</span><b>Segmentación y locales</b><p>Resultados por tienda y públicos definidos por edad, género, shopping e intereses.</p></div>
+      <div class="ef"><span class="ef-i">05</span><b>Informe de resultados</b><p>Respuestas totales, porcentajes, opción más elegida y promedio de calificación por período.</p></div>
     </div>
 
     <div class="enc-flow">
       <div><span>1</span><b>Diseñamos</b><small>Definimos objetivos y preguntas con tu marca.</small></div>
-      <div><span>2</span><b>Segmentamos</b><small>Elegimos locales y perfiles de usuarios.</small></div>
+      <div><span>2</span><b>Se activa</b><small>Aparece cuando el usuario aplica un beneficio en tu local.</small></div>
       <div><span>3</span><b>El usuario responde</b><small>Desde la app, en pocos segundos.</small></div>
-      <div><span>4</span><b>Medís y decidís</b><small>Insights reales para tus próximas campañas.</small></div>
+      <div><span>4</span><b>Recibís el informe</b><small>Resultados y resúmenes con IA para tus próximas decisiones.</small></div>
     </div>
   </div>
 </section>
@@ -424,6 +425,6 @@
 </footer>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script src="app.js?v=202610151724"></script>
+<script src="app.js?v=202610151730"></script>
 </body>
 </html>

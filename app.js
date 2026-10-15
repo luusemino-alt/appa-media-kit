@@ -303,15 +303,14 @@
 
   // ---------- encuesta interactiva ----------
   function renderSurvey() {
-    const box = $('#svNps'); if (!box) return;
-    box.innerHTML = Array.from({ length: 11 }, (_, n) => `<button type="button" role="radio" aria-checked="${n === 9}" class="${n <= 6 ? 'd' : n <= 8 ? 'n' : 'p'}${n === 9 ? ' on' : ''}">${n}</button>`).join('');
-    box.onclick = e => {
-      const b = e.target.closest('button'); if (!b) return;
-      $$('button', box).forEach(x => { x.classList.toggle('on', x === b); x.setAttribute('aria-checked', x === b); });
-      const n = +b.textContent, t = n >= 9 ? 'Promotor' : n >= 7 ? 'Neutral' : 'Detractor';
-      $('.enc-chip-a span').textContent = `NPS · ${t}`;
+    const opts = $('#svOpts'), stars = $('#svStars'); if (!opts) return;
+    let know = 'Sí', rate = 5;
+    const chip = () => {
+      $('#svChip').textContent = `${know === 'No' ? 'No conocía la marca' : know === 'Poco' ? 'Conocía poco la marca' : 'Conocía la marca'} · ${rate} ★`;
       const c = $('.enc-chip-a'); c.classList.remove('pop'); void c.offsetWidth; c.classList.add('pop');
     };
+    opts.onclick = e => { const b = e.target.closest('button'); if (!b) return; $$('button', opts).forEach(x => x.classList.toggle('on', x === b)); know = b.textContent; chip(); };
+    stars.onclick = e => { const b = e.target.closest('button'); if (!b) return; const all = $$('button', stars); rate = all.indexOf(b) + 1; all.forEach((x, i) => x.classList.toggle('on', i < rate)); chip(); };
   }
 
   renderTabs(); renderInfo(); renderPhone(); renderHero(); renderShowcase(); renderSurvey(); bindControls(); renderSpecs(); renderMalls(); effects();
