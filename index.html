@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=202610151713">
+<link rel="stylesheet" href="styles.css?v=202610151724">
 </head>
 <body>
 
@@ -31,6 +31,7 @@
       <a href="#formatos">Formatos</a>
       <a href="#medidas">Medidas</a>
       <a href="#gift">¡appa! GIFT</a>
+      <a href="#encuestas">Encuestas</a>
     </nav>
     <a href="#simulador" class="btn btn-green btn-sm">Ver mi marca en ¡appa!</a>
   </div>
@@ -77,7 +78,7 @@
         <div class="eco-i eco-hl"><img src="assets/icons/user.svg" alt=""><span>Comunicación segmentada</span></div>
         <div class="eco-i eco-hl"><img src="assets/icons/tag.svg" alt=""><span>Descuentos y beneficios exclusivos</span></div>
         <div class="eco-i"><img src="assets/icons/ticket.svg" alt=""><span>Eventos</span></div>
-        <div class="eco-i"><img src="assets/icons/doc.svg" alt=""><span>Encuestas + NPS</span></div>
+        <a class="eco-i eco-hl" href="#encuestas"><img src="assets/icons/doc.svg" alt=""><span>Encuestas + NPS</span></a>
         <div class="eco-i"><img src="assets/icons/invoice.svg" alt=""><span>Carga de facturas</span></div>
         <div class="eco-i"><img src="assets/icons/bell.svg" alt=""><span>Sorteos y concursos</span></div>
         <div class="eco-i"><img src="assets/icons/car.svg" alt=""><span>Parking</span></div>
@@ -309,25 +310,82 @@
   </div>
 </section>
 
-<!-- INSIGHTS + TU CAMPAÑA -->
-<section class="sec sec-light" id="campana">
+<!-- ENCUESTAS -->
+<section class="sec sec-enc" id="encuestas">
   <div class="wrap">
-    <div class="insights">
-      <div class="ins-l">
-        <span class="eyebrow eyebrow-dark">Encuestas</span>
-        <h2>Conocé <span class="g">a tus clientes</span></h2>
-        <p class="ins-sub">Medí la satisfacción en tiempo real.</p>
-      </div>
-      <ul class="ticks ticks-lg">
-        <li>Encuestas de satisfacción in-app y NPS</li>
-        <li>Personalización por local</li>
-        <li>Segmentación demográfica avanzada</li>
-        <li>Comunicación in-app para seguir llevando tráfico al local</li>
-        <li>Reportes interactivos y analíticos mensuales</li>
-      </ul>
-      <p class="ins-res"><b>Resultado:</b> insights reales para tus próximas campañas.</p>
+    <div class="sec-head">
+      <span class="eyebrow">Encuestas + NPS</span>
+      <h2>Conocé a tus clientes <span class="g">en tiempo real</span></h2>
+      <p>Encuestas in-app que el usuario responde desde su celular, segmentadas por local y por perfil. Cada respuesta se transforma en datos accionables para tu marca y para tus próximas campañas.</p>
     </div>
 
+    <div class="enc">
+      <div class="enc-phone">
+        <div class="phone">
+          <div class="scr scr-white"><div class="sv">
+            <div class="sv-top"><span>←</span><b>Encuesta</b><span class="sv-step">1/3</span></div>
+            <div class="sv-bar"><i></i></div>
+            <div class="sv-brand"><span class="sv-logo">TU<br>MARCA</span><small>Alto Palermo · hace 10 min</small></div>
+            <p class="sv-q">¿Qué tan probable es que recomiendes nuestra tienda a un amigo?</p>
+            <div class="sv-nps" id="svNps" role="radiogroup" aria-label="Puntaje de 0 a 10"></div>
+            <div class="sv-scale"><span>Nada probable</span><span>Muy probable</span></div>
+            <p class="sv-q sv-q2">¿Cómo calificarías la atención?</p>
+            <div class="sv-stars" id="svStars">★★★★★</div>
+            <p class="sv-q sv-q2">¿Qué fue lo que más te gustó?</p>
+            <div class="sv-chips"><span class="on">Atención</span><span>Variedad</span><span>Precio</span><span>Local</span></div>
+            <span class="sv-send">Enviar respuesta</span>
+          </div><div class="home-ind"></div></div>
+        </div>
+        <div class="enc-chip enc-chip-a"><b>Respuesta registrada</b><span>NPS · Promotor</span></div>
+      </div>
+
+      <div class="dash">
+        <div class="dash-hd"><span class="dot"></span><b>Panel de resultados</b><small>Vista ilustrativa</small></div>
+        <div class="dash-grid">
+          <div class="dash-card dash-nps">
+            <small>Net Promoter Score</small>
+            <svg viewBox="0 0 120 70" class="gauge" aria-hidden="true"><path d="M10 62a50 50 0 0 1 100 0" class="g-bg"/><path d="M10 62a50 50 0 0 1 100 0" class="g-val"/></svg>
+            <b class="nps-v">NPS</b>
+            <div class="nps-leg"><span><i class="p"></i>Promotores</span><span><i class="n"></i>Neutrales</span><span><i class="d"></i>Detractores</span></div>
+          </div>
+          <div class="dash-card">
+            <small>Satisfacción por local</small>
+            <ul class="bars">
+              <li><span>Local A</span><i style="--v:86%"></i></li>
+              <li><span>Local B</span><i style="--v:72%"></i></li>
+              <li><span>Local C</span><i style="--v:64%"></i></li>
+              <li><span>Local D</span><i style="--v:78%"></i></li>
+            </ul>
+          </div>
+          <div class="dash-card dash-wide">
+            <small>Evolución mensual</small>
+            <svg viewBox="0 0 300 80" class="spark" aria-hidden="true" preserveAspectRatio="none"><path class="sp-area" d="M0 62 C40 58 60 50 90 52 S150 34 180 38 S240 20 300 16 L300 80 L0 80Z"/><path class="sp-line" d="M0 62 C40 58 60 50 90 52 S150 34 180 38 S240 20 300 16"/></svg>
+            <div class="months"><span>Ene</span><span>Feb</span><span>Mar</span><span>Abr</span><span>May</span><span>Jun</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="enc-feats">
+      <div class="ef"><span class="ef-i">01</span><b>Encuestas in-app y NPS</b><p>Satisfacción y recomendación medidas directamente en la app, justo después de la experiencia de compra.</p></div>
+      <div class="ef"><span class="ef-i">02</span><b>Personalización por local</b><p>Preguntas y resultados por cada tienda, para comparar y detectar oportunidades.</p></div>
+      <div class="ef"><span class="ef-i">03</span><b>Segmentación demográfica</b><p>Elegí a quién preguntar según edad, género, shopping e intereses de compra.</p></div>
+      <div class="ef"><span class="ef-i">04</span><b>Comunicación in-app</b><p>Después de responder, el usuario puede recibir comunicaciones que lo invitan a volver al local.</p></div>
+      <div class="ef"><span class="ef-i">05</span><b>Reportes mensuales</b><p>Reportes interactivos y analíticos con la evolución de cada indicador.</p></div>
+    </div>
+
+    <div class="enc-flow">
+      <div><span>1</span><b>Diseñamos</b><small>Definimos objetivos y preguntas con tu marca.</small></div>
+      <div><span>2</span><b>Segmentamos</b><small>Elegimos locales y perfiles de usuarios.</small></div>
+      <div><span>3</span><b>El usuario responde</b><small>Desde la app, en pocos segundos.</small></div>
+      <div><span>4</span><b>Medís y decidís</b><small>Insights reales para tus próximas campañas.</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- TU CAMPAÑA -->
+<section class="sec sec-light" id="campana">
+  <div class="wrap">
     <div class="sec-head sec-head-dark sec-head-c">
       <h2>Tu campaña en <img class="inline-logo inline-logo-dark" src="assets/img/logo-appa.png" alt="¡appa!"></h2>
     </div>
@@ -366,6 +424,6 @@
 </footer>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script src="app.js?v=202610151713"></script>
+<script src="app.js?v=202610151724"></script>
 </body>
 </html>
