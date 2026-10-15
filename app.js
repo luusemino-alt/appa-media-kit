@@ -272,5 +272,34 @@
     requestAnimationFrame(step);
   }
 
-  renderTabs(); renderInfo(); renderPhone(); renderHero(); bindControls(); renderSpecs(); renderMalls(); effects();
+
+  // ---------- vitrina de formatos (mismas pantallas que el simulador) ----------
+  function renderShowcase() {
+    const ITEMS = [
+      ['home1', 'Banner Home Principal', 'in'], ['home2', 'Banner Home Secundario', 'in'], ['mall', 'Banner Perfil Shopping', 'in'],
+      ['benef', 'Sección Beneficios', 'in'], ['desc', 'Sección Descuentos', 'in'], ['parking', 'Touch Point Parking', 'in'],
+      ['popup', 'Pop-up', 'in'], ['push', 'Notificación Push', 'out'], ['mail', 'Mailing', 'out']
+    ];
+    const rail = $('#showRail');
+    rail.innerHTML = ITEMS.map(([k, label, g], i) => {
+      const scr = screenFor[k], html = scr === 'home' ? SCREENS.home(k) : SCREENS[scr]();
+      const f = fmtBy(k);
+      return `<article class="show-card" data-g="${g}" style="--i:${i}">
+        <div class="show-phone"><div class="phone">${html}</div></div>
+        <div class="show-meta"><span class="show-tag ${g}">${g === 'in' ? 'In-app' : 'Fuera de la app'}</span>
+          <h4>${label}</h4><p>${f.text ? 'Título + mensaje' : sizeTxt(f)}${f.brand ? ` · ${esc(f.brand)}` : ''}</p></div>
+      </article>`;
+    }).join('');
+    const step = () => (rail.querySelector('.show-card:not([hidden])')?.offsetWidth || 300) + 24;
+    $('#showPrev').onclick = () => rail.scrollBy({ left: -step(), behavior: 'smooth' });
+    $('#showNext').onclick = () => rail.scrollBy({ left: step(), behavior: 'smooth' });
+    $('#showFilter').onclick = e => {
+      const b = e.target.closest('button'); if (!b) return;
+      $$('#showFilter button').forEach(x => x.setAttribute('aria-selected', x === b));
+      $$('.show-card', rail).forEach(c => { c.hidden = b.dataset.g !== 'all' && c.dataset.g !== b.dataset.g; });
+      rail.scrollTo({ left: 0, behavior: 'smooth' });
+    };
+  }
+
+  renderTabs(); renderInfo(); renderPhone(); renderHero(); renderShowcase(); bindControls(); renderSpecs(); renderMalls(); effects();
 })();

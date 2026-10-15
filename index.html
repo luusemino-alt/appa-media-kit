@@ -168,11 +168,16 @@
       <h2>Marcas que ya se destacan <span class="g">en ¡appa!</span></h2>
       <p>Campañas reales de marcas líderes, dentro y fuera de la app: banners, pop-ups, notificaciones y mailing.</p>
     </div>
-    <div class="real">
-      <figure class="real-fig"><img src="assets/img/reales-06.jpg" alt="Banner principal, banner secundario, banner perfil de mall y touch point dentro de la app ¡appa!" loading="lazy"><figcaption>Visualización in-app</figcaption></figure>
-      <figure class="real-fig real-sm"><img src="assets/img/reales-07.jpg" alt="E-mail, notificación push y pop-up de ¡appa!" loading="lazy"><figcaption>Comunicación: e-mail, notificaciones y pop-up</figcaption></figure>
+    <div class="show-bar">
+      <div class="show-filter" role="tablist" id="showFilter">
+        <button data-g="all" aria-selected="true">Todos</button><button data-g="in" aria-selected="false">In-app</button><button data-g="out" aria-selected="false">Fuera de la app</button>
+      </div>
+      <div class="show-nav"><button id="showPrev" aria-label="Anterior">←</button><button id="showNext" aria-label="Siguiente">→</button></div>
     </div>
-    <div class="kpis">
+  </div>
+  <div class="show-rail" id="showRail"></div>
+  <div class="wrap">
+    <div class="kpis bento">
       <div class="kpi"><b>13.000</b><span>usuarios ingresan en promedio por día</span></div>
       <div class="kpi"><b>0,81%</b><span>CTR promedio de banners y pop-up</span></div>
       <div class="kpi"><b>1,5%</b><span>CTR los viernes y sábados, los días de mayor actividad</span></div>
